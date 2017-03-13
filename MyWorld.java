@@ -17,7 +17,7 @@ public class MyWorld extends World
     {    
         super(600, 400, 1); 
         addObject(new startB(),300,250);
-        addObject(new instructionB(),300,320);
+        addObject(new instructionB(),300,350);
  
     }       
     }
