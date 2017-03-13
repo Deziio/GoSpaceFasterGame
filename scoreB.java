@@ -1,22 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class hard here.
+ * Write a description of class scoreB here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class hard extends Actor
+public class scoreB extends Actor
 {
     /**
-     * Act - do whatever the hard wants to do. This method is called whenever
+     * Act - do whatever the scoreB wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this)){
-            
-            Greenfoot.setWorld(new levelH());
-    }     
+        // Add your action code here.
     }    
 }

@@ -3,4 +3,5 @@ comment0.target=meteor
 comment0.text=\r\n\ fish\ spin\!\r\n\ \r\n\ @author\ Dezio\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ fish\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 numComments=2

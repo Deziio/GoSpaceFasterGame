@@ -5,11 +5,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class life extends Actor{
 
-    public void act() 
-    {
+    public void act() {
         this.setLocation(getX(),getY()+2);
-      if(getY()>=550){
+      if(isAtEdge()){
           getWorld().removeObject(this);
         }
-    }    
+    }
 }

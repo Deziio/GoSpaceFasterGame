@@ -6,20 +6,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class start extends World
+public class levelN extends World
 {
-
-    /**
-     * Constructor for objects of class start.
-     * 
-     */
     GreenfootSound backgroundMusic = new GreenfootSound("Unity.wav");
     GreenfootSound lostMusic = new GreenfootSound("Lost.wav");
     GreenfootSound winMusic = new GreenfootSound("Win.wav");
     int meteor = 0;
     int life = 0;
     int x = 0;
-    public start()
+    public levelN()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 

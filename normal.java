@@ -16,7 +16,7 @@ public class normal extends Actor
     {
         if(Greenfoot.mouseClicked(this)){
             
-            Greenfoot.setWorld(new start());
+            Greenfoot.setWorld(new levelN());
     }     
     }    
 }

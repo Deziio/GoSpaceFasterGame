@@ -14,18 +14,23 @@ public class SpaceShip extends Actor
     GreenfootImage image2 = new GreenfootImage("spaceshipR.png");
     Counter1 counter = new Counter1();
     Counter2 counter1 = new Counter2();
+    private int shotTime = 0;
     public void act() 
     {
         checkKeyPress();
         if(isTouching(life.class)){
             removeTouching(life.class);
-            counter.addScore();
             counter1.addLife();
         }
          if(isTouching(meteor.class)){
             removeTouching(meteor.class);
             counter1.mLife();
         }
+        if(isTouching(laserT.class)){
+            removeTouching(laserT.class);
+            counter1.mLife();
+        }
+        shoot();
     }    
     
     public void checkKeyPress(){
@@ -45,6 +50,18 @@ public class SpaceShip extends Actor
         if(Greenfoot.isKeyDown("down")){
             setImage(image);
             setLocation(getX() , getY() +5);
+        }
+    }
+    public void shoot()
+    {
+        
+        if(shotTime>0){
+            shotTime = shotTime-1;
+        }
+        else if(Greenfoot.isKeyDown("space")){
+            //Greenfoot.playSound("laser.wav");
+            getWorld().addObject(new laser(), getX(), getY() -40);
+            shotTime = 20;
         }
     }
 }
