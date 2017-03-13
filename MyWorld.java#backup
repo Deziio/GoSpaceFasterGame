@@ -1,0 +1,61 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class MyWorld here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class MyWorld extends World
+{
+
+    /**
+     * Constructor for objects of class MyWorld.
+     * 
+     */
+    int fish = 0;
+    int burger = 0;
+    public MyWorld()
+    {    
+        
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 600, 1); 
+        addObject(new Hen(), 300, 530);
+        addObject(new Counter1(), 500, 20);
+        addObject(new Counter2(), 50, 20);
+    }
+    public void act(){
+        fish+=1;
+        
+        if(fish==30){
+            addObject(new fish(),Greenfoot.getRandomNumber(getWidth()),20);
+            fish=0;
+        }
+        burger+=1;
+        
+        if(burger==500){
+            addObject(new fruits(),Greenfoot.getRandomNumber(getWidth()),15);
+            burger=0;
+        }
+           
+        if(Counter2.life<=0){
+         showText("SCORE "+Counter1.score,400,400);
+         Counter1.score = 0;
+         showText("KUY RAI PRAPON",300,300);
+         Greenfoot.stop();
+         }
+        if(Counter1.score>=20){
+         showText("SCORE "+Counter1.score,400,400);
+         Counter1.score = 0;
+         showText("ISUS PRAPON",300,300);
+         Greenfoot.stop();
+            }
+        }
+ 
+            
+    }
+        
+    
+
+   
+    
