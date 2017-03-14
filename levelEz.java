@@ -8,14 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class levelEz extends World
 {
+    int asteroid = 0;
     private int wave = 1;
     private int spawnShip = 20+5*wave;
-    GreenfootSound backgroundMusic = new GreenfootSound("Unity.wav");
+    static GreenfootSound backgroundMusic = new GreenfootSound("Unity.wav");
     //GreenfootSound lostMusic = new GreenfootSound("Lost.wav");
-    //GreenfootSound winMusic = new GreenfootSound("Win.wav");
+    //GreenfootSound bossMusic = new GreenfootSound("Boss.mp3");
     int n=120;
     int life = 0;
-    int x = 0;
+    int x = 0; int y = 0;
     Timer timerText = new Timer();
     public levelEz(){    
         super(800, 600, 1); 
@@ -26,12 +27,19 @@ public class levelEz extends World
         Timer.timer = 9000;
         Counter1.score = 0;
         backgroundMusic.playLoop();
+        addObject(new back(),750,580);
+        addObject(new restart(),65,580);
     }
     public void act(){
         Timer.timer--;
         timerText.setText("Time left: " + (Timer.timer/60));
         //showText("Timer "+ timer,50,50);
-        
+        asteroid+=1;
+        if(asteroid==150-(y/3)){
+            addObject(new asteroid(),Greenfoot.getRandomNumber(getWidth()),20);
+            asteroid=0;
+            y++;
+        }
         spawn();
         life+=1;
         if(life==500){

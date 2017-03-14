@@ -7,12 +7,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class levelH extends World
-{int meteor = 0;
+{
+    int asteroid = 0;
     private int wave = 1;
     private int spawnShip = 20+5*wave;
-    GreenfootSound backgroundMusic = new GreenfootSound("Unity.wav");
+   static GreenfootSound backgroundMusic = new GreenfootSound("Unity.wav");
     //GreenfootSound lostMusic = new GreenfootSound("Lost.wav");
-    //GreenfootSound winMusic = new GreenfootSound("Win.wav");
+    GreenfootSound bossMusic = new GreenfootSound("Boss.mp3");
     int n=120;
     int life = 0;
     int x = 0; int y = 0;
@@ -26,15 +27,17 @@ public class levelH extends World
         Timer.timer = 9000;
         Counter1.score = 0;
         backgroundMusic.playLoop();
+        addObject(new back(),750,580);
+        addObject(new restart(),65,580);
     }
     public void act(){
         Timer.timer--;
         timerText.setText("Time left: " + (Timer.timer/60));
         //showText("Timer "+ timer,50,50);
-        meteor+=1;
-        if(meteor==100-(y/3)){
-            addObject(new meteor(),Greenfoot.getRandomNumber(getWidth()),20);
-            meteor=0;
+        asteroid+=1;
+        if(asteroid==100-(y/3)){
+            addObject(new asteroid(),Greenfoot.getRandomNumber(getWidth()),20);
+            asteroid=0;
             y++;
         }
         spawn();
@@ -43,8 +46,9 @@ public class levelH extends World
             addObject(new life(),Greenfoot.getRandomNumber(getWidth()),15);
             life=0;
         }
-        if(Timer.timer==0 || Counter2.life==100){
+        if(Timer.timer==0 || Counter2.life==110){
             backgroundMusic.stop();
+            bossMusic.stop();
             //lostMusic.playLoop();
             Score x =new Score();
             Greenfoot.setWorld(x);
@@ -57,12 +61,18 @@ public class levelH extends World
             addObject(new spaceT(),Greenfoot.getRandomNumber(getWidth()),20);
             spawnShip--;
             n=100;
+            if(k>1){
+            k--;
+        }
         }
         if(wave>=3 && spawnShip==0){ //75
             addObject(new SpaceTBoss(),Greenfoot.getRandomNumber(getWidth()),20);
+            backgroundMusic.stop();
+            bossMusic.stop();
+            bossMusic.play();
             //Score x =new Score();
             //Greenfoot.setWorld(x);
-            meteor = -100000;
+            asteroid = -100000;
             k = 50;
         }
         if(spawnShip==0){

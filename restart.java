@@ -1,25 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class back here.
+ * Write a description of class restart here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class back extends Actor
+public class restart extends Actor
 {
-    /**
-     * Act - do whatever the back wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
             Score.lostMusic.stop();
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new level());
             levelH.backgroundMusic.stop();
             levelN.backgroundMusic.stop();
             levelEz.backgroundMusic.stop();
+            
     }     
     }    
 }

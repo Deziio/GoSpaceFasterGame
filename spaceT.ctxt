@@ -5,7 +5,6 @@ comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ moveAround()
-comment2.text=public\ void\ remove(){\r\n\ \ \ \ \ \ \ \ if(isTouching(laser.class)){\r\n\ \ \ \ \ \ \ \ \ \ \ \ removeTouching(laser.class);\r\n\ \ \ \ \ \ \ \ \ \ \ \ counter.addScore();\r\n\ \ \ \ \ \ \ \ \ \ \ \ removeTouching(spaceT.class);\r\n\ \ \ \ \ \ \ \ \ \ \ \ getWorld().removeObject(this);\r\n\ \ \ \ \ \ \ \ }\r\n}
 comment3.params=
 comment3.target=void\ laser()
 numComments=4

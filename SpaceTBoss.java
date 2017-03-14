@@ -8,12 +8,50 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SpaceTBoss extends Actor
 {
-    /**
-     * Act - do whatever the SpaceTBoss wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    Counter1 counter = new Counter1();
+    private int velocity = 2;
+    int hpboss = 40;
     public void act() 
     {
-        // Add your action code here.
-    }    
+        moveAround();
+        laser();
+        if(isTouching(laser.class)){
+            removeTouching(laser.class);
+            counter.addScore();
+            hpboss--;
+            //getWorld().removeObject(this);
+        }
+        else if(hpboss==0){
+          getWorld().addObject(new Explosion(),getX(),getY());
+          getWorld().removeObject(this);
+        }
+        
+   }
+   int n = 60;
+        public void moveAround()
+        {
+           int y = getY();
+           move(velocity);
+           if(n>30){
+               n--;
+           this.setLocation(getX(),y+1);
+        }
+        if(n<30){
+               n++;
+           this.setLocation(getX(),y-1);
+        }
+           if(isAtEdge()){
+                velocity = velocity*-1;
+           }
+           
+    }  
+    public void laser()
+    {
+       if (Greenfoot.getRandomNumber(100)<2){
+            getWorld().addObject(new laserT(), getX()-45, getY());
+        }
+        if (Greenfoot.getRandomNumber(100)<2){
+            getWorld().addObject(new laserT(), getX()+45, getY());
+        }
+    }
 }

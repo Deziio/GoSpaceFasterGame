@@ -9,9 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public MyWorld(){    
-        super(600, 400, 1); 
-        addObject(new startB(),300,250);
-        addObject(new instructionB(),300,350);
+        super(800, 600, 1); 
+        addObject(new startB(),400,350);
+        addObject(new instructionB(),400,450);
     }
 }
         

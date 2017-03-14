@@ -24,16 +24,8 @@ public class spaceT extends Actor{
           getWorld().removeObject(this);
         }
         
-        //remove();
+        
    }
-   /*public void remove(){
-        if(isTouching(laser.class)){
-            removeTouching(laser.class);
-            counter.addScore();
-            removeTouching(spaceT.class);
-            getWorld().removeObject(this);
-        }
-    }*/
         public void moveAround()
         {
            int y = getY();

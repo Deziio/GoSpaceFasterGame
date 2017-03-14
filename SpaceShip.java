@@ -22,13 +22,20 @@ public class SpaceShip extends Actor
             removeTouching(life.class);
             counter1.addLife();
         }
-         if(isTouching(meteor.class)){
-            removeTouching(meteor.class);
+         if(isTouching(asteroid.class)){
+            removeTouching(asteroid.class);
             counter1.mLife();
         }
         if(isTouching(laserT.class)){
             removeTouching(laserT.class);
             counter1.mLife();
+        }
+        if(isTouching(spaceT.class)){
+            removeTouching(spaceT.class);
+            counter1.mLife();
+        }
+        if(counter1.life == 0){
+            getWorld().addObject(new Explosion(),getX(),getY());
         }
         shoot();
     }    
@@ -59,7 +66,7 @@ public class SpaceShip extends Actor
             shotTime = shotTime-1;
         }
         else if(Greenfoot.isKeyDown("space")){
-            //Greenfoot.playSound("laser.wav");
+            Greenfoot.playSound("Laser12.mp3");
             getWorld().addObject(new laser(), getX(), getY() -40);
             shotTime = 20;
         }
