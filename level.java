@@ -15,9 +15,10 @@ public class level extends World
      */
     public level()
     {    
-        super(600, 400, 1); 
-        addObject(new ez(),150,150);
-        addObject(new normal(),450,150);
-        addObject(new hard(),300,320);
+        super(800, 600, 1); 
+        addObject(new ez(),250,250);
+        addObject(new normal(),550,250);
+        addObject(new hard(),400,450);
+        addObject(new back(),720,540);
     }
 }

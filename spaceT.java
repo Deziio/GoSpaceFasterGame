@@ -13,6 +13,7 @@ public class spaceT extends Actor{
     public void act() 
     {
         moveAround();
+        laser();
         if(isTouching(laser.class)){
             removeTouching(laser.class);
             counter.addScore();
@@ -22,7 +23,7 @@ public class spaceT extends Actor{
         else if(getY()>=550){
           getWorld().removeObject(this);
         }
-        laser();
+        
         //remove();
    }
    /*public void remove(){

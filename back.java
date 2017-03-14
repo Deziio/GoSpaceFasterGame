@@ -15,8 +15,9 @@ public class back extends Actor
     public void act() 
     {
         if(Greenfoot.mouseClicked(this)){
-            
+            Score.lostMusic.stop();
             Greenfoot.setWorld(new MyWorld());
+            
     }     
     }    
 }
