@@ -12,21 +12,27 @@ public class spaceT extends Actor{
     
     public void act() 
     {
-        if(getY()>=550){
+        moveAround();
+        if(isTouching(laser.class)){
+            removeTouching(laser.class);
+            counter.addScore();
+            //removeTouching(spaceT.class);
+            getWorld().removeObject(this);
+        }
+        else if(getY()>=550){
           getWorld().removeObject(this);
         }
-        moveAround();
         laser();
-        remove();
+        //remove();
    }
-   public void remove(){
+   /*public void remove(){
         if(isTouching(laser.class)){
             removeTouching(laser.class);
             counter.addScore();
             removeTouching(spaceT.class);
             getWorld().removeObject(this);
         }
-    }
+    }*/
         public void moveAround()
         {
            int y = getY();

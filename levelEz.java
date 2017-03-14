@@ -18,7 +18,7 @@ public class levelEz extends World
     int life = 0;
     int x = 0;
     public levelEz(){    
-        super(600, 400, 1); 
+        super(800, 600, 1); 
         addObject(new SpaceShip(), 300, 530);
         spawn();
         Timer();
