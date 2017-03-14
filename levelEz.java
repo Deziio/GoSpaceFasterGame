@@ -13,7 +13,7 @@ public class levelEz extends World
     GreenfootSound backgroundMusic = new GreenfootSound("Unity.wav");
     //GreenfootSound lostMusic = new GreenfootSound("Lost.wav");
     //GreenfootSound winMusic = new GreenfootSound("Win.wav");
-    int n=100;
+    int n=120;
     int life = 0;
     int x = 0;
     Timer timerText = new Timer();
@@ -31,7 +31,7 @@ public class levelEz extends World
         Timer.timer--;
         timerText.setText("Time left: " + (Timer.timer/60));
         //showText("Timer "+ timer,50,50);
-        //backgroundMusic.playLoop();
+        
         spawn();
         life+=1;
         if(life==500){
