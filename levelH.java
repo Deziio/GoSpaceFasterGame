@@ -46,7 +46,7 @@ public class levelH extends World
             addObject(new life(),Greenfoot.getRandomNumber(getWidth()),15);
             life=0;
         }
-        if(Timer.timer==0 || Counter2.life==110){
+        if(Timer.timer==0 || Counter2.life==0){
             backgroundMusic.stop();
             bossMusic.stop();
             //lostMusic.playLoop();
